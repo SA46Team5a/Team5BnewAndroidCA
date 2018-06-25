@@ -1,20 +1,11 @@
 package com.example.anthony.androidca;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.SimpleAdapter;
-
-import com.example.anthony.androidca.R;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 
@@ -50,7 +41,7 @@ public class BookDetailActivity extends Activity {
     void show(BookModel book)
     {
         final BookModel Book=book;
-        int[] ids={R.id.editText1,R.id.editText2,R.id.editText3,R.id.editText4,R.id.editText5,R.id.editText6,R.id.editText7,R.id.editText8};
+        int[] ids={R.id.ISBN,R.id.title,R.id.authorName,R.id.categoryName,R.id.price,R.id.discountedPrice,R.id.stockLevel,R.id.synopsis};
         String[] keys={"ISBN","title", "authorName","categoryName","price","discountedPrice","stockLevel","synopsis"};
 
         for(int i=0;i<keys.length;i++)

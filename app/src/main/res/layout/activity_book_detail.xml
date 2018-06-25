@@ -33,7 +33,7 @@
                 android:editable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText1" />
+                android:id="@+id/ISBN" />
 
         </TableRow>
         <TableRow
@@ -50,7 +50,7 @@
                 android:editable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText2" />
+                android:id="@+id/title" />
 
         </TableRow>
 
@@ -68,7 +68,7 @@
                 android:editable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText3" />
+                android:id="@+id/authorName" />
         </TableRow>
 
         <TableRow
@@ -85,7 +85,7 @@
                 android:editable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText4" />
+                android:id="@+id/categoryName" />
         </TableRow>
 
         <TableRow
@@ -102,7 +102,7 @@
                 android:editable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText5" />
+                android:id="@+id/price" />
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -118,7 +118,7 @@
                 android:editable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText6" />
+                android:id="@+id/discountedPrice" />
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -134,7 +134,7 @@
                 android:editable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText7" />
+                android:id="@+id/stockLevel" />
         </TableRow>
         <TableRow
             android:layout_width="match_parent"
@@ -150,7 +150,7 @@
                 android:editable="false"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText8" />
+                android:id="@+id/synopsis" />
         </TableRow>
 
 
