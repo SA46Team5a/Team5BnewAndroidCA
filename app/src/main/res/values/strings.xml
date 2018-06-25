@@ -15,4 +15,5 @@
     <string name="searchActivity_appbar_title">Search for Books</string>
     <string name="ListOfBooksActivity_appbar_title"> Search Results</string>
     <string name="BookDetailActivity_appbar_title">Book Details</string>
+
 </resources>
