@@ -19,7 +19,7 @@ import java.util.List;
 public class BookModel extends HashMap<String,String>  {
 
 
-    final static String baseURL = "http://172.17.117.57/BookStore/Endpoint/IBookService.svc/";
+    final static String baseURL = "http://172.17.118.1/BookStore/Endpoint/IBookService.svc/";
 
     public BookModel(String ISBN,String title, String authorName, String categoryName, String price,String discountedPrice,String stockLevel,String synopsis) {
 
@@ -72,7 +72,7 @@ public class BookModel extends HashMap<String,String>  {
         }
         return searchResult;
     }
-    final static String imageURL = "http://172.17.117.57/BookStore/Resources/BookCovers";
+    final static String imageURL = "http://172.17.118.1/BookStore/Resources/BookCovers";
     public static Bitmap getPhoto(boolean thumbnail, String isbn) {
         try {
             URL url = (thumbnail ? new URL(String.format("%s/%s-s.jpg",imageURL, isbn)) :

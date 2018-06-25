@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,8 @@ public class ListOfBooksActivity extends ListActivity {
                                    int position, long id) {
         final String item = (String) getListAdapter().getItem(position);
         Intent intent=new Intent(this,BookDetailActivity.class);
+        Toast t= Toast.makeText(this,"Book is selected",Toast.LENGTH_LONG);
+        t.show();
         intent.putExtra("ISBN",item);
         startActivity(intent);
 
