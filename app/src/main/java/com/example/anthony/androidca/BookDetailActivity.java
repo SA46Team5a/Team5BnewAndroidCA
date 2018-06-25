@@ -16,6 +16,8 @@ import com.example.anthony.androidca.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.text.DecimalFormat;
+
 public class BookDetailActivity extends Activity {
     final static String baseURL = "http://172.17.118.1/BookStore/Endpoint/IBookService.svc/";
 
@@ -54,7 +56,13 @@ public class BookDetailActivity extends Activity {
         for(int i=0;i<keys.length;i++)
         {
             EditText e=(EditText) findViewById(ids[i]);
-            e.setText(book.get(keys[i]));
+            String text = book.get(keys[i]);
+            text = text.trim().replace("\n", "").replace("\r", "").replaceAll("\\s+"," ");
+            if(i==4||i==5){
+                DecimalFormat df = new DecimalFormat("$###,###.00");
+                text = df.format(Double.parseDouble(text));
+            }
+            e.setText(text);
         }
         final ImageView image=(ImageView)findViewById(R.id.bookImage);
         new AsyncTask<Void, Void,Bitmap>() {

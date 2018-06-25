@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 public class MyAdapter extends ArrayAdapter<String> {
@@ -44,9 +45,13 @@ public class MyAdapter extends ArrayAdapter<String> {
                 }
                 @Override
                 protected void onPostExecute(BookModel result) {
-                    titleView.setText(result.get("title"));
+                    String title = result.get("title");
+                    title = title.trim().replace("\n", "").replace("\r", "").replaceAll("\\s+"," ");
+                    DecimalFormat df = new DecimalFormat("$###,###.00");
+
+                    titleView.setText(title);
                     authorView.setText(result.get("authorName"));
-                    priceView.setText(result.get("price"));
+                    priceView.setText(df.format(Double.parseDouble(result.get("price"))));
                 }
             }.execute();
 
