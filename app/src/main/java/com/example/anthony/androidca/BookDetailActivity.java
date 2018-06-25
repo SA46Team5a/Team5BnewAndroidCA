@@ -10,24 +10,17 @@ import android.widget.ImageView;
 import java.text.DecimalFormat;
 
 public class BookDetailActivity extends Activity {
-    final static String baseURL = "http://172.17.118.1/BookStore/Endpoint/IBookService.svc/";
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_detail);
-        final Intent intent1=getIntent();
-        final String ISBN=intent1.getStringExtra("ISBN");
-        //BookModel book=BookModel.getBook(ISBN);
+        final Intent incomingIntent = getIntent();
+        final String ISBN = incomingIntent.getStringExtra("ISBN");
 
-
-        //show(book);
         new AsyncTask<Void, Void,BookModel>() {
             @Override
             protected BookModel doInBackground(Void... params) {
-
-
                 return BookModel.getBook(ISBN);
             }
             @Override

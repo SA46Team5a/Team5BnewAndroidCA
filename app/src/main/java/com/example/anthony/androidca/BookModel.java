@@ -23,6 +23,7 @@ import java.util.List;
 public class BookModel extends HashMap<String,String>  {
 
     final static String baseURL = "http://172.17.118.1/BookStore/Endpoint/IBookService.svc/";
+    final static String imageURL = "http://172.17.118.1/BookStore/Resources/BookCovers";
 
     public BookModel(String ISBN,String title, String authorName, String categoryName, String price,String discountedPrice,String stockLevel,String synopsis) {
 
@@ -89,13 +90,9 @@ public class BookModel extends HashMap<String,String>  {
         return searchResult;
     }
 
-    final static String imageURL = "http://172.17.118.1/BookStore/Resources/BookCovers";
-
-
     private static boolean hasMatchingString(BookModel book, String s) {
         return (book.get("title").toString().toLowerCase()).contains(s.trim().toLowerCase());
     }
-
 
     private static int hasMatchingWords(BookModel book,List<String> searchWords){
         int noOfMatches = 0;

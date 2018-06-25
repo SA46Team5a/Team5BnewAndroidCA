@@ -42,14 +42,11 @@ public class SearchActivity extends Activity {
 
                     @Override
                     protected List<String> doInBackground(String... strings) {
-                        if(searchCriteria==null || searchCriteria.equals(" ")){
+                        if(searchCriteria==null || searchCriteria.equals(" "))
                             return BookModel.list();
-                        }
                         else{
                             if(BookModel.searchBookByTitle(searchCriteria).isEmpty())
-                            {
                                 t.show();
-                            }
                             return BookModel.searchBookByTitle(searchCriteria);
                         }
                     }
@@ -84,11 +81,9 @@ public class SearchActivity extends Activity {
                         startActivity(i);
                     }
                 }.execute();
-
             }
         });
     }
-
 
     public String getSearchText(){
         return searchText.getText().toString();
