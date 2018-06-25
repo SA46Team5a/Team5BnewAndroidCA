@@ -31,6 +31,7 @@ public class SearchActivity extends Activity {
         //final Context ctx = getApplicationContext();
 
         searchBtn.setOnClickListener( new View.OnClickListener() {
+            @SuppressLint("StaticFieldLeak")
             @Override
             public void onClick(View view) {
                 final String searchCriteria = getSearchText();
@@ -39,7 +40,7 @@ public class SearchActivity extends Activity {
 
                     @Override
                     protected List<String> doInBackground(String... strings) {
-                        if(searchCriteria==null){
+                        if(searchCriteria==null || searchCriteria.equals(" ")){
                             return BookModel.list();
                         }
                         else{
@@ -55,7 +56,6 @@ public class SearchActivity extends Activity {
                     }
                 }.execute();
 
-
             }
         });
 
@@ -66,9 +66,7 @@ public class SearchActivity extends Activity {
                 new AsyncTask<String,Void,List<String>>(){
                     @Override
                     protected List<String> doInBackground(String... strings) {
-
                             return BookModel.list();
-
                     }
 
                     @Override

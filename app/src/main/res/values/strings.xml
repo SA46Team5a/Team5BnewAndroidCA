@@ -12,5 +12,7 @@
     <string name="search">Search Books by Title</string>
     <string name="btn_search_all_txt">All Books</string>
     <string name="btn_search_txt">Search</string>
-
+    <string name="searchActivity_appbar_title">Search for Books</string>
+    <string name="ListOfBooksActivity_appbar_title"> Search Results</string>
+    <string name="BookDetailActivity_appbar_title">Book Details</string>
 </resources>
