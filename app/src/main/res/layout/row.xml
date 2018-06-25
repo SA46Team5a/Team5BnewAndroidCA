@@ -17,6 +17,7 @@
 
         <TextView
             android:id="@+id/titleView"
+            android:textStyle="bold"
             android:singleLine="true"
             android:ellipsize="marquee"
             android:typeface="serif"
