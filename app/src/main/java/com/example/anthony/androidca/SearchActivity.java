@@ -44,7 +44,6 @@ public class SearchActivity extends Activity {
                     protected List<String> doInBackground(String... strings) {
                         if(searchCriteria==null || searchCriteria.equals(" ")){
                             return BookModel.list();
-
                         }
                         else{
                             if(BookModel.searchBookByTitle(searchCriteria).isEmpty())
@@ -57,7 +56,7 @@ public class SearchActivity extends Activity {
 
                     @Override
                     protected void onPostExecute(List<String> result) {
-                        if(!BookModel.searchBookByTitle(searchCriteria).isEmpty()) {
+                        if(!result.isEmpty()) {
                             Intent i = new Intent(SearchActivity.this, ListOfBooksActivity.class);
                             i.putExtra("listOfBooks", (ArrayList<String>) result);
                             startActivity(i);

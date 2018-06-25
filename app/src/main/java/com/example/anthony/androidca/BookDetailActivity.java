@@ -17,7 +17,6 @@ public class BookDetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_detail);
-       // StrictMode.setThreadPolicy(StrictMode.ThreadPolicy.LAX);
         final Intent intent1=getIntent();
         final String ISBN=intent1.getStringExtra("ISBN");
         //BookModel book=BookModel.getBook(ISBN);
