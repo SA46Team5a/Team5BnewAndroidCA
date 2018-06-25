@@ -66,12 +66,17 @@ public class BookModel extends HashMap<String,String>  {
         List<String> searchResult = new ArrayList<String>();
         for (String isbn: allBooksISBN) {
             BookModel book = getBook(isbn);
-            if((book.get("title").toString().toLowerCase()).contains(searchCriteria.toLowerCase())){
+            if(BookModel.hasMatchingString(book, searchCriteria)){
                 searchResult.add(book.get("ISBN").toString());
             }
         }
         return searchResult;
     }
+
+    private static boolean hasMatchingString(BookModel book, String s) {
+        return (book.get("title").toString().toLowerCase()).contains(s.trim().toLowerCase());
+    }
+
     final static String imageURL = "http://172.17.117.57/BookStore/Resources/BookCovers";
     public static Bitmap getPhoto(boolean thumbnail, String isbn) {
         try {
